@@ -4,6 +4,7 @@ import string
 a = list(string.ascii_lowercase)
 q = SimpleQueue()
 listaResult = []
+listaResult4 = []
 o = 0
 listaVencedores = []
 
@@ -15,6 +16,7 @@ for c in a:
 
 #Programa principal:
 
+#Oitavas
 for i in range(8):
     #Pegamos os resultados
     resultado = input("Digite o resultado do jogo: ").split()
@@ -27,19 +29,31 @@ for i in range(8):
         listaVencedores.append(a[0])
         a.remove(a[0])
         a.remove(a[0])
-        print(listaVencedores)
+        #print(listaVencedores)
 
     else:
         q.get(a[0])
         listaVencedores.append(a[1])
         a.remove(a[0])
         a.remove(a[0])
-        print(listaVencedores)
+        #print(listaVencedores)
         
 
-print(q.qsize())
-print(a)
-
+#Ganhadores das quartas:
+for p in range(4):
+    goleadas = input("Digite os resultados das quartas").split()
+    for c in goleadas:
+        listaResult4.append(c)
+    if listaResult4[0] > listaResult[1]:
+        q.get(listaVencedores[1])
+        listaVencedores.remove(listaVencedores[1])
+        print(listaVencedores)
+        
+    else:
+        listaVencedores.remove(listaVencedores[0])
+        q.get(listaVencedores[0])
+        print(listaVencedores)
+    
 
 
     
