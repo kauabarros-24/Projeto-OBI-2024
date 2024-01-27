@@ -3,16 +3,33 @@ import string
 
 a = list(string.ascii_lowercase)
 q = SimpleQueue()
+listaResult = []
+o = 0
 
 for c in a:
     q.put(c)
+    o+=1
+    if o == 16:
+        break
 
 #Programa principal:
 
 for i in range(8):
+    #Pegamos os resultados
     resultado = input("Digite o resultado do jogo: ").split()
+    #Ordenamos eles
     for n in resultado:
-        pass
+        listaResult.append(n)
+    #Colocamos na fila, separando-os em listas:
+    if listaResult[0] > listaResult[1]:
+        q.get(a[1])
+        a.remove(a[1])
+    else:
+        q.get(a[0])
+        a.remove(a[0])
+
+print(q.qsize())
+print(a)
 
 
 
