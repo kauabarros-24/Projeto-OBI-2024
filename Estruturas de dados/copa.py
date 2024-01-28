@@ -44,6 +44,7 @@ class Pontos:
                         q.get(listaOitavas[0])
                         listaOitavas.remove(listaOitavas[0])
                         print(listaOitavas)
+        n+=1
 
 #Programa principal:
 for i in range(12):
