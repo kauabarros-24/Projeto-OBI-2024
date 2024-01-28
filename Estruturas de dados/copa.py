@@ -19,7 +19,7 @@ class Pontos:
     def __init__(self, resultado0, resultado1):
         self.resultado0 = resultado0
         self.resultado1 = resultado1
-    while n <= 14:
+    while n <= 15:
         if n <= 8:
             def oitavas(self):
                 if self.resultado0 > self.resultado1:
@@ -32,7 +32,6 @@ class Pontos:
                     listaOitavas.append(a[1])
                     a.remove(a[0])
                     a.remove(a[0])
-                print(listaOitavas)
         elif n <= 12:
             def quartas(self):
                 if self.resultado0 > self.resultado1:
@@ -45,7 +44,6 @@ class Pontos:
                     listaQuartas.append(listaOitavas[1])
                     listaOitavas.remove(listaOitavas[0])
                     listaOitavas.remove(listaOitavas[0])
-                print(listaQuartas)
         elif n <= 14:
             def semi(self):
                 if self.resultado0 > self.resultado1:
@@ -53,19 +51,22 @@ class Pontos:
                     listaSemi.append(listaQuartas[0])
                     listaQuartas.remove(listaQuartas[0])
                     listaQuartas.remove(listaQuartas[0])
-                    print(listaSemi)
                 else:
                     q.get(listaQuartas[0])
                     listaSemi.append(listaQuartas[1])
                     listaQuartas.remove(listaQuartas[0])
                     listaQuartas.remove(listaQuartas[0])
-                    print(listaSemi)
-                print(listaSemi)
+        else:
+            def finais(self):
+                if self.resultado0 > self.resultado1:
+                    print(listaSemi[0])
+                else:
+                    print(listaSemi[1])
         n+=1
 
 #Programa principal
 
-for i in range(14):
+for i in range(15):
     resultado = input("Digite os valores: ").split()
     pontos = Pontos(resultado[0], resultado[1])
     if i < 8:
@@ -74,3 +75,5 @@ for i in range(14):
         pontos.quartas()
     elif i < 14:
         pontos.semi()
+    else:
+        pontos.finais()
