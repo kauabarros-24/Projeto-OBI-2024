@@ -1,19 +1,14 @@
 from queue import SimpleQueue
-repeticoes = int(input())
+#Área de var:
 q = SimpleQueue()
+repeticoes = int(input("Digite o numéro de repetições: "))
+lista = []
 
-
-#ProgramaPrincipal
 for i in range(repeticoes):
-    expression = input()
-    c = 0
-    while c < len(expression) - 1:
-        
-        c+=1
-        
+    lista.append(input("Digite a expressão: "))
+    
 
-while q.qsize() > 0:
-    print(q.get())
+
 
 
 
