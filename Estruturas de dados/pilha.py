@@ -1,9 +1,19 @@
-#Lifo (último entrar primeiro a sair)
-from queue import LifoQueue
-q = LifoQueue()
-q.put(1)
-q.put(2)
-print(q.qsize())
-print(q.get())
-print(q.get())
-print(q.get())
+a = "()}]"
+#print(a[0])
+#b = a.replace(a[0], "").replace(a[1], "")
+#a = b
+#print(b)
+#print(a)
+
+for x in a:
+    if x == a[-1]:
+        break
+    i = 1
+    print(x, "mestre")
+    for y in enumerate(a[i:], 2):
+        print(y)
+    l = a.replace(x, a[i])
+    a = l
+    a.s
+    i+=1
+    
