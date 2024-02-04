@@ -1,19 +1,23 @@
-a = "()}]"
+from queue import LifoQueue
+a = "{[]}"
 #print(a[0])
 #b = a.replace(a[0], "").replace(a[1], "")
 #a = b
 #print(b)
 #print(a)
-
+t = 0
 for x in a:
     if x == a[-1]:
-        break
+       break
+    subA = a.replace(a[t], "")
+    print(subA)
     i = 1
     print(x, "mestre")
-    for y in enumerate(a[i:], 2):
+    for y in subA:
         print(y)
-    l = a.replace(x, a[i])
-    a = l
-    a.s
     i+=1
+    t+=1
+
+
+        
     

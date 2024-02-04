@@ -8,6 +8,10 @@ from queue import LifoQueue
 #print(q.qsize())
 #c = "Ola"
 #print(c[0])
-c = "Ola"
-for i in enumerate(c[1:], 1):
-    print(i)
+c = "OlO"
+#for i in enumerate(c[1:], 1):
+    #print(i)
+#c.remove(c[0])
+a = c - c[0]
+#c = a
+print(a)
