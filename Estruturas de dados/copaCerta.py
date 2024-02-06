@@ -14,6 +14,7 @@ for fase in range(1, 5):
         else:
             vencedores[fase].append(equipe2)
 print(vencedores[4][0])
+
         
 
         

@@ -1,43 +1,24 @@
-from queue import LifoQueue
 
-#área de var
-q = LifoQueue()
-repeticoes = int(input())
-lista = []
+repet = int(input())
 
-#Programa de apoio
-for i in range(repeticoes):
-    lista.append(input())
+for _ in range(repet):
+    palavra = input()
+    str = []
+    ok = "S"
+    for c in palavra:
+        if c in "([{":
+            str.append(c)
+        else:
+            if len(str) > 0 and str[-1] == "(" and c == ")":
+                str.pop()
+            elif len(str) > 0 and str[-1] == "[" and c == "]":
+                str.pop()
+            elif len(str) > 0 and str[-1] == "{" and c == "}":
+                str.pop()
+            else:
+                ok = "N"
+                break
+    if len(str) > 0:
+        ok = "N"
+    print(ok)
 
-#Programa principal
-
-for c in lista:
-    q = LifoQueue()
-    if len(c) % 2 != 0:
-        print("N")
-    else:
-        t = 1
-        for o in c:
-            print(f"Esse é o = {o}")
-            for j in enumerate(c[t:]):
-                if o == "[" and j == "]" or o == "(" and j == ")" or o == "{" and j == "}" :
-                    q.put("S")
-                    print(f"Esse é c antes do replace = {c}")
-                    x = c.replace(o, "").replace(j, "")
-                    c = x
-                    print(f"Esse é c depois do replace = {c}")
-                    t+=1
-    
-                else:
-                    print("Caso não ativado")
-                    t+=1
-    
-                    q.put("N")
-        print(q.get())
-
-
-
-
-    
-
-    
