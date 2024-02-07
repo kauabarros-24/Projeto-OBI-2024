@@ -11,7 +11,6 @@ while True:
         num.remove(o)
         if tamanhoN - retirarD == len(num):
             break
-        
     resp =  ''.join(map(str, num))
     print(resp)
     
