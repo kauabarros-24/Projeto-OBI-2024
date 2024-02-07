@@ -1,6 +1,7 @@
-from queue import PriorityQueue
-
+from queue import PriorityQueue, LifoQueue, SimpleQueue
+import time
 while True:
+    inicio = time.time()
     tamanhoN, retirarD = map(int, input().split())
     if tamanhoN == 0 and retirarD == 0:
         break
@@ -12,3 +13,5 @@ while True:
         num.remove(pq.get())
     resp =  ''.join(map(str, num))
     print(resp)
+    fim = time.time()
+    print(fim - inicio)

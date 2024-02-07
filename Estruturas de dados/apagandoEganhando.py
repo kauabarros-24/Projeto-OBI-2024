@@ -1,4 +1,6 @@
+import time
 while True:
+    inicio = time.time()
     tamanhoN, retirarD = map(int, input().split())
     if tamanhoN == 0 and retirarD == 0:
         break
@@ -13,7 +15,8 @@ while True:
             break
     resp =  ''.join(map(str, num))
     print(resp)
-    
+    fim = time.time()
+    print(fim - inicio)
 
     
 
