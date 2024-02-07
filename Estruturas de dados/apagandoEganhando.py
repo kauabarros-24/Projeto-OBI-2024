@@ -1,11 +1,26 @@
-from queue import LifoQueue, SimpleQueue
-
-#Var
 while True:
-    tamanhoN, sairD = map(int, input("Digite o tamanho do número e o valor a ser retirado: ").split())
-    if tamanhoN == 0 and sairD == 0:
+    tamanhoN, retirarD = map(int, input().split())
+    if tamanhoN == 0 and retirarD == 0:
         break
-    str = []
-    str.append(int(input("Digite o número a ser usado: ")))
+    a, num, subnum = str(input()), [], []
+    for c in a:
+        num.append(c)
+        subnum.append(c)
+    subnum.sort()    
+    for o in subnum:
+        num.remove(o)
+        if tamanhoN - retirarD == len(num):
+            break
+        
+    resp =  ''.join(map(str, num))
+    print(resp)
+    
+
+    
+
+
+    
+
+
 
 

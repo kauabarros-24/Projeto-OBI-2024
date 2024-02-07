@@ -1,12 +1,13 @@
-a = [3, 2, 4]
+a = ["324"] 
 b = []
-b.append(a)
-b.sort()
-print(b)
-print(a)
 i = 0
-while i <= 1:
-    print(b)
-    a.remove(b[i])
-    print(b)
+for c in a:
+    b.append(c)
+    print(c)
+b.sort()
+for k in b:
+    if i == 2:
+        break
+    a.remove(k)
     i+=1
+print(a)
