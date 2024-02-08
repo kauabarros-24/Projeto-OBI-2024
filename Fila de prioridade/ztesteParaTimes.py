@@ -30,9 +30,11 @@ i = 0
 
 for c, i in lista:
     pass
-"""
+
 for i in range(pq.qsize()):
     print(pq.get())
+"""
+
 
 
 
