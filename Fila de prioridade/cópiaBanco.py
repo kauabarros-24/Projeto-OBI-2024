@@ -14,17 +14,14 @@ if quantidadeCaixas == 1:
         todosAtendimentos = i
         break
     for chegada, atendimento in lista:
-        print(f"chegada: {chegada} | atendimento: {atendimento}")
         ate = todosAtendimentos - chegada
         todosAtendimentos += atendimento
-        print(f"ate: {ate} | todosAtendimentos: {todosAtendimentos}")
         if ate > 20:
             contador20 += 1
-            print(f"Contador: {contador20}")
         if chegada > ate:
             tempoAtendimento, ate = 0, 0
-            print("Zerados")
-        print(" ")
+            
+            
 else:
     for c in range(quantidadeCaixas):
         todosAtendimentos = lista[c - 1]
