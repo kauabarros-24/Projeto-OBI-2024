@@ -18,4 +18,5 @@ for _ in range(versao):
 
 for programa in sorted(resposta):
     print(programa, resposta[programa])
+    
         
