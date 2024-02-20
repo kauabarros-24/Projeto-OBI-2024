@@ -1,17 +1,22 @@
-pedacos, tamanhoComer =  map(int, input().split())
-tamanhoPedacos = list(map(int, input().split()))
+pedacos, tamanhoPedacos = map(int, input().split())
+seq = list(map(int, input().split()))
 
-i = 0
-resp = 0
 
-for mestre in tamanhoPedacos:
-    i+=1
-    contador = mestre
-    for sudito in tamanhoPedacos[i:]:
-        contador+=sudito
-        if contador - sudito <= tamanhoComer and contador > tamanhoComer:    
-            resp+=1
-            break
-    
+contador = 0
 
-print(pedacos - resp)
+#for i in range(pedacos):
+  #  for j in range(i, pedacos):
+  #      if sum(seq[i+1:j+1]) <= tamanhoPedacos:
+   #         contador+=1
+    #        break
+
+for i in range(pedacos):
+    for j in range(i+1, pedacos):
+        if sum(seq[:i]) + sum(seq[j:]) == 0:
+            contador+=1
+            
+
+
+
+
+print(contador)
