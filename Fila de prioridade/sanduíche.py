@@ -1,46 +1,48 @@
-from queue import SimpleQueue
-#pedacos, tamanhoPedaco = map(int, input().split())
-#seq = list(map(int, input().split()))
+N, D = map(int, input().split())
+A = list(map(int, input().split()))
 
-#contador = 0
-#for c in range(pedacos):
-##for j in range(c, pedacos):
-###if sum(seq[c:c+1]) <= tamanhoPedaco:
-####contador += 1
+ans1 = 0
+l = 0
+r = 0
+soma = 0
 
-#for c in range(pedacos - 1):
-##for j in range(c + 1,  pedacos):
-###if sum(tamanhoPedaco[:c]) + sum(tamanhoPedaco[j:]) == tamanhoPedaco:
-####contador += 1
+while l < N:
+    while r < N and soma + A[r] <= D:
+        soma += A[r]
+        r += 1
 
-#print(contador)
+    if soma == D:
+        ans1 += 1
 
-pedacos , tamanhoPedaco = map(int, input().split())
-seq = list(map(int, input().split()))
+    soma -= A[l]
+    l += 1
 
-contador = 0
-lista = []
-for c in range(pedacos):
-    for j in range(c, pedacos):
-        soma = sum(seq[c:j+1])
-        lista.append(soma)
-        if soma > tamanhoPedaco and lista[-1] <= tamanhoPedaco:
-            contador+=1 
-            print(soma)
-            soma = 0
-            break
-        
+Pref = [0] * N
+Suf = [0] * N
 
-lista.clear()
-for c in range(pedacos - 1):
-    for j in range(c+1, pedacos):
-        soma = sum(seq[:c]) + sum(seq[j:])
-        lista.append(soma)
-        if soma > tamanhoPedaco and lista[-1] <= soma:
-            contador+=1
-            print(soma)
-            soma = 0
-            break
-        
-print(contador)
+acc = 0
+for i in range(N):
+    acc += A[i]
+    Pref[i] = acc
 
+acc = 0
+for i in range(N - 1, -1, -1):
+    acc += A[i]
+    Suf[i] = acc
+
+ans2 = 0
+SufCount = {}
+
+for i in range(N - 2, -1, -1):
+    if Suf[i + 1] not in SufCount:
+        SufCount[Suf[i + 1]] = 0
+
+    SufCount[Suf[i + 1]] += 1
+
+    if Pref[i] > D:
+        continue
+
+    if (D - Pref[i]) in SufCount:
+        ans2 += SufCount[D - Pref[i]]
+
+print(ans1 + ans2)
