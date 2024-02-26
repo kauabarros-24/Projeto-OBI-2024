@@ -4,8 +4,7 @@ quantidadeConsultas, quantidadeVar = map(int, input().split())
 lq = SimpleQueue()
 lista = []
 
-def find_root(value):
-    return value in lista
+def find_root(value): return value in lista
     
 def merge(x, y):
     x_root = find_root(x)
@@ -20,8 +19,7 @@ def find(x, y):
     
 for _ in range(quantidadeVar):
     tipoOp, banco1, banco2 = input().split()
-    banco1 = int(banco1)
-    banco2 = int(banco2)
+    banco1, banco2 = int(banco1), int(banco2)
     merge(banco1, banco2) if tipoOp == "F" else find(banco1, banco2)
     
 while lq.qsize() > 0: print(lq.get())
