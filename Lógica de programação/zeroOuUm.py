@@ -1,0 +1,2 @@
+jogadorA, jogadorB, jogadorC = map(int, input().split())
+print("A") if jogadorA != jogadorB and jogadorB == jogadorC else(print("B") if jogadorB != jogadorC and jogadorA == jogadorC else(print("C") if jogadorC != jogadorA and jogadorB == jogadorA else print("*")))
