@@ -5,7 +5,7 @@ for _ in range(10):
 
 #Imprimir o menor valor:
 lista.sort()
-print(f"Menor: {lista.sort[0]}")
+print(f"Menor: {lista[0]}")
 
 #Contar quantas vezes aparece o menor valor
 print(f"Ocorrencias: {lista.count(lista[0])}")
@@ -15,5 +15,6 @@ for i in range(lista.count(lista[0])):
     lista[i] = -1
 
 #Printar
-
+for valor in lista:
+    print(valor, end=' ')
 
