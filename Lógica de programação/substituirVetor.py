@@ -1,27 +1,17 @@
-lista = []
-listaOcorrer = []
-#Ler 10 inteiros
-for _ in range(10):
-    lista.append(int(input()))
+#Ler 10 valores inteiros
+listaValores = [int(input())for _ in range(10)]
 
 #Imprimir o menor valor:
-lista.sort()
-print(f"Menor: {lista[0]}")
+menorValor = min(listaValores)
+print("Menor:",menorValor)
 
-#Armzenar as posições na qual aparece o menor valor:
-contador = 0
-for c in lista:
-    if c == lista[0]:
-        listaaOcorrer
-
-
-
-
-#Substituir o menor valor por -1:
-for i in range(lista.count(lista[0])):
-    lista[i] = -1
-
-#Printar
-for valor in lista:
-    print(valor, end=' ')
-
+#Pegar os índices na qual listaValores[0] estiver e substituir por -1:
+listaOcorrencias = []
+for i, c in enumerate(listaValores):
+    if c == menorValor:
+        listaOcorrencias.append(i)
+        listaValores[i] = -1
+        
+#Imprimir:
+print("Ocorrencias:",*listaOcorrencias)
+print(*listaValores)
