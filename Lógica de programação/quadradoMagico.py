@@ -15,13 +15,4 @@ for c in range(len(listaValores)):
     somaColuna = sum(sublista[c] for sublista in listaValores3)
     if testeSoma(somaColuna):
         count+=1
-#
-
-
-
-
-    
-
-
-
-
+#Diagonal
