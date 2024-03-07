@@ -7,9 +7,8 @@ valor = 0
 def testeSoma(valorSoma): return valorSoma == sum(listaValores[0])
 #Verificar a soma na horizontal:
 valor = 0
-for c in range(len(listaValores)): 
-    if testeSoma(sum(listaValores[c])):
-        valor+=1
+valor+= sum(1 for c in range(len(listaValores)) if testeSoma(sum(listaValores[c])))
+print(valor)
     
 
 
