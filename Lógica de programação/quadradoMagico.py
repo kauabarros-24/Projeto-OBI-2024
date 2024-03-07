@@ -11,4 +11,4 @@ def testeSoma(valorSoma):
 soma = 0
 print(valor)
 #Verificar a soma na horizontal:
-for c in range(len(listaValores)): testeSoma(sum(listaValores[c]))
+testeSoma(sum(listaValores[c]) for c in range(len(listaValores)))
