@@ -6,6 +6,7 @@ listaValores = [list(map(int, input().split())) for _ in range(tamanho)]
 valor = 0
 valorSublista = 0
 count = 0
+listaDiagonal = []
 def testeSoma(valorSoma): return valorSoma == sum(listaValores[0])
 
 #Verificar a soma na horizontal:
@@ -15,3 +16,12 @@ for c in range(len(listaValores)):
     somaColuna = sum(sublista[c] for sublista in listaValores)
     if testeSoma(somaColuna): pass
 #Diagonal
+contador = 0
+for c in range(len(listaValores)):
+    listaDiagonal.append(listaValores[c - 1][contador])
+    contador+=1
+print(testeSoma(sum(listaDiagonal)))
+
+
+    
+    
