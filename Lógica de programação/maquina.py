@@ -1,6 +1,6 @@
 andar3, andar2, andar1 = int(input()), int(input()), int(input())
 #lista = [andar3, andar2, andar1]                      
-#-> Solução do Kauã  
+#-> Solução do Kauã     
 #maiorValor = max(lista)
 #if maiorValor == andar3:
 #    print((andar1 * 4) + (andar2 * 2))

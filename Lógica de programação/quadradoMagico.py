@@ -12,7 +12,6 @@ def testeSoma(valorSoma): return valorSoma == sum(listaValores[0])
 valor+= sum(1 for c in range(len(listaValores)) if testeSoma(sum(listaValores[c])))
 #Vericar a soma na vertical:
 for c in range(len(listaValores)):
-    somaColuna = sum(sublista[c] for sublista in listaValores3)
-    if testeSoma(somaColuna):
-        count+=1
+    somaColuna = sum(sublista[c] for sublista in listaValores)
+    if testeSoma(somaColuna): pass
 #Diagonal
